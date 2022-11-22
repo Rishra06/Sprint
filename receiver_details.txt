@@ -1,0 +1,11 @@
+anjali bairagi,1001,female,o+,6265181387,ratlam,21,123456789098
+Shreyansh sokal,1002,male,o,1,asdf,12,1234
+anjali,1003,female,o+,6265181387,ratlam,22,12314655879
+anjali,1004,female,b+,1232456798,address,21,124762263
+shreyansh,1004,male,c-,23,addresss,23,12
+aditi,1006,female,e+,12,address,2,12345
+anjali raj,1007,female,a+,123456,addr,21,32
+shriyansh,1008,male,c+,12,adhresyoyo,22,1234
+aprajeeta Singh,1009,female,a+,9889876253,kolkata,22,534261827364
+sakshi,1010,female,o+,1214243432,indore,23,342516273687
+anjali,1011,f,b,9876543678,address,22,441820152305
