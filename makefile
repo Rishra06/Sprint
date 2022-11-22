@@ -1,10 +1,11 @@
-all: sprint
 
-sprint: sprint_def.o sprint_cl.o
-	gcc sprint.h sprint_def.c sprint_cl.c -o sprint
+all: hospital_details
 
-sprint_def.o: sprint_def.c
-	gcc -c sprint.h sprint_def.c
+hospital_details: hospital_details_def.o hospital_details_main.o
+	gcc hospital_details.h hospital_details_def.c hospital_details_main.c -o hospital_details
+
+hospital_details_def.o: hospital_details_def.c
+	gcc -c hospital_details.h hospital_details_def.c
            
-sprint_cl.o: sprint_cl.c
-	gcc -c sprint.h sprint_cl.c
+hospital_details_main.o: hospital_details_main.c
+	gcc -c hospital_details.h hospital_details_main.c
