@@ -1,61 +1,68 @@
-#include<stdio.h>
-#include"validation.h"
+#include"sprint.h"
+#include<ctype.h>
+
 /*this is a function to validate name of the user where it takes a name as parameter to the function whih is of string type and checks whether the name contains only alphabets and space and returns flag as 1 if true by printing the name as valid.But, if it contains any other special or alphanumeric character flag returns false(0) with an error message. */
-
-
 int nameToValidate(char *name)
 {
+ printf("nameToValidate");
    int i,flag=0;
    char c[100];
-   
       i=0;
       while(name[i] != '\0')  //checks until it encounters a null character to end the string
       {
-      
-        if(name[i]!=' ')   //checks if a character in the string contains space
+       if(name[i]!=' ')   //checks if a character in the string contains space
         {
           if((name[i]>='A'&& name[i]<='Z') || (name[i]>='a' && name[i]<='z'))   //checks if the character is alphabet or not
           {
              c[i]=name[i];
              flag=1;       
           }  
+          
+          
+          
           else
           {
+             
              flag=0;
              break;
           }//else
-        }//if
+       }   
+        
         else
             c[i]+=' '; 
+            
         i++;
       }//while
+      
        c[i]='\0';
+   
+       
+      
           if(flag==1)
           {
               printf("\nName Validated\n");
-          	  return 1;
+              return 1;
+              
           }
           else
           {
               printf("\nInvalid name!!It must contain alphabets only..!!!\n");
+             
           }
-          return 0;
+     return 0;      
+          
 }//nameToValidate()
 
 
 
 
 /*function to validate adhaar number by accepting adhaar number from the user.If the length of pan is 10 then it will enter into other check points like whether the pan number contains both alphabets and numbers at particular position. If true then the adhaar number is correct else incorrect. */
-
 int adhaarToValidate(char *adhaar)
 {
 
     int i=0,flag=0;
     char adhaar_string[13];
-    char c;
-   
-    
-    sprintf(adhaar_string, "%ld", adhaar); //to convert long int to string
+    printf(adhaar_string, "%ld", adhaar); //to convert long int to string
     
     if(strlen(adhaar_string)!=12)
           printf("\nPlease enter valid adhaar number...\n");
@@ -82,20 +89,69 @@ int adhaarToValidate(char *adhaar)
               printf("\nadhaar number is valid\n");
               return 1;
            }
-           else{
+           else
               printf("\nadhaar number is invalid\n");
-           }
            
            
+       
        }//if
-       else{
-         printf("\nInvalid adhaar number\n");
-       }
-                 
-    
+       
+       
+       else
+          printf("\nInvalid adhaar number\n");       
+       
     }//else
     return 0;
 }
+/*function to validate email of the user.It takes "email" as a string and checks if the email contains alphabet,'@','.' or not and prints valid if entered data contains these specified characters */
+int emailToValidate(char *email)
+{
+
+
+return 1;
+/*
+    int i=0,checkat=0,checkdot=0,flag=0;
+    if(strlen(email)>50){
+    
+     printf("\nPlease enter correct mail_id\n");
+        return 0;
+    }
+        
+    
+    else
+    {
+    printf("else block");
+             //to check if '@' and '.' are present or not in the email
+             int attherate = 0, dot = 0;
+             while(i < strlen(email))
+             {
+             
+                if(email[i]=='@')
+                {
+                printf("found @");
+                  checkat=1;
+                  attherate = i;
+                }
+                if(email[i] == '.'){
+                printf("found .");
+                  checkdot = 1;
+                  dot = i;
+                }
+                i++;
+             }
+             
+             if(checkat==1 && checkdot==1){
+             
+               printf("Valid email");
+               return 1;
+             }
+     }
+             printf("Invalid email...it must contain '@' and '.'");    
+             return 0;
+             */
+}//emailToValidate()
+
+
 
 /*function to validate phone number.This function takes phone number as argument to the function whose return type is long int. This function checks whether the entered phone number is of 10 digits or not and then checks if the phone number starts with 7,8,9 or not. */
 int phoneNoToValidate(long int phone)
@@ -125,12 +181,10 @@ int phoneNoToValidate(long int phone)
               
            }//for
            
-           if(flag==1)
-           {
-           printf("\nphone number is valid\n");
+           if(flag==1){
+              printf("\nphone number is valid\n");
               return 1;
-              }
-              
+            }
            else
               printf("\nphone number is invalid\n");
            
@@ -144,8 +198,8 @@ int phoneNoToValidate(long int phone)
     
     }//else
         
+return 0;
 
-    return 0;
 }//phoneToValidate()
 
 
